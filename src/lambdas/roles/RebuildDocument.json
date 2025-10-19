@@ -1,0 +1,11 @@
+{
+  "Statement": [
+    {
+      "Action": [
+        "s3:PutObject"
+      ],
+      "Resource": "arn:aws:s3:::pii-redaction-output/redacted/*",
+      "Effect": "Allow"
+    }
+  ]
+}

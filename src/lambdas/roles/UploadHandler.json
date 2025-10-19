@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "s3:PutObject",
+        "s3:PutObjectTagging"
+      ],
+      "Resource": "arn:aws:s3:::pii-redaction-uploads/uploads/*",
+      "Effect": "Allow"
+    },
+    {
+      "Action": "states:StartExecution",
+      "Resource": "arn:aws:states:REGION:ACCOUNT_ID:stateMachine:RedactPIIWorkflow",
+      "Effect": "Allow"
+    }
+  ]
+}

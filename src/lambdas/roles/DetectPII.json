@@ -1,0 +1,11 @@
+{
+  "Statement": [
+    {
+      "Action": [
+        "comprehend:DetectPiiEntities"
+      ],
+      "Resource": "*",
+      "Effect": "Allow"
+    }
+  ]
+}

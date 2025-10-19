@@ -1,0 +1,14 @@
+{
+  "Statement": [
+    {
+      "Action": [
+        "s3:DeleteObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::pii-redaction-uploads/uploads/*",
+        "arn:aws:s3:::pii-redaction-output/redacted/*"
+      ],
+      "Effect": "Allow"
+    }
+  ]
+}
