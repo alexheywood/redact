@@ -19,9 +19,12 @@ This project allows users to upload DOCX or PDF files via a React SPA. AWS servi
 ## 📦 Project Structure
 
 pii-redaction-app/
+
+```
 ├── frontend/ # React SPA
 ├── lambdas/ # Lambda functions (Python + Node.js)
 ├── docs/ # Architecture diagrams, flowcharts
+```
 
 ---
 
@@ -99,6 +102,8 @@ Final state sequence:
     "End": true
   }
 }
+```
+
 ---
 
 ### 4. Create API Gateway
@@ -114,6 +119,7 @@ Enable CORS and binary media types for PDF/DOCX. Deploy to a stage (e.g., prod) 
 ---
 
 ### 5. Configure SES
+
 Verify your sender email (e.g., alex@yourdomain.com)
 
 Move SES out of sandbox mode if needed
@@ -129,4 +135,3 @@ Build frontend react app
 Host in Amplify
 
 Set up firewall rules
-```
