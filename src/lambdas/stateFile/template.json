@@ -1,0 +1,36 @@
+{
+  "Comment": "PII Redaction Workflow",
+  "StartAt": "ExtractText",
+  "States": {
+    "ExtractText": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:REGION:ACCOUNT_ID:function:ExtractText",
+      "Next": "DetectPII"
+    },
+    "DetectPII": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:REGION:ACCOUNT_ID:function:DetectPII",
+      "Next": "RedactText"
+    },
+    "RedactText": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:REGION:ACCOUNT_ID:function:RedactText",
+      "Next": "RebuildDocument"
+    },
+    "RebuildDocument": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:REGION:ACCOUNT_ID:function:RebuildDocument",
+      "Next": "StoreFile"
+    },
+    "StoreFile": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:REGION:ACCOUNT_ID:function:StoreFile",
+      "Next": "SendEmail"
+    },
+    "SendEmail": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:REGION:ACCOUNT_ID:function:SendEmail",
+      "End": true
+    }
+  }
+}
