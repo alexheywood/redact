@@ -30,6 +30,11 @@
     "SendEmail": {
       "Type": "Task",
       "Resource": "arn:aws:lambda:REGION:ACCOUNT_ID:function:SendEmail",
+      "Next": "arn:aws:lambda:REGION:ACCOUNT_ID:function:SendEmail"
+    },
+    "CleanupFiles": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:REGION:ACCOUNT_ID:function:CleanupFiles",
       "End": true
     }
   }
